@@ -90,6 +90,7 @@ export default function Canvas() {
     link.click();
   };
   const clearCanvas = () => {
+    canvasRef?.current?.parentNode.classList.add(style.shake)
     context?.clearRect(0, 0, canvasWidth, canvasHeight);
     Xini = canvasWidth / 2;
     Yini = canvasHeight / 2;
@@ -110,7 +111,10 @@ export default function Canvas() {
   document.addEventListener("keyup", (event) => {
     keysPressed[event.keyCode] = false;
   });
-
+  canvasRef?.current?.parentNode.addEventListener("animationend", function() {
+  canvasRef?.current?.parentNode.classList.remove(style.shake);
+})
+  
   return (
     <div className={style.container}>
       <canvas
