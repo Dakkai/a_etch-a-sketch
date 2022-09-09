@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <div style={{width:"600px", height:"600px", backgroundColor:'black'}}>
+      <div style={{width:"600px", height:"600px"}}>
      <Canvas />
       </div>
     </div>
